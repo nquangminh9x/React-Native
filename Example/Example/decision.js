@@ -1,6 +1,7 @@
 // return false to cheat, true to cooperate
 const decide = (history = []) => {
   
+ return history.length==0 ? true : history[history.length - 1].theirs; 
   // const IfIChooseTrue = history.filter(historyDecide => historyDecide.yours == true);
   // const IfIChooseFalse = history.filter(historyDecide =>historyDecide.yours == false);
   // const interestRateIfIChooseTrue = IfIChooseTrue.map(historyDecideIChooseTrue => totalMoney(historyDecideIChooseTrue.yours , historyDecideIChooseTrue.theirs));
@@ -8,7 +9,7 @@ const decide = (history = []) => {
   // const totalMoneyIfIChooseTrue = interestRateIfIChooseTrue.reduce((sum , number) => number+sum , 0);
   // const totalMoneyIfIChooseFalse = interestRateIfIChooseFalse.reduce((summ , numberr) => numberr+summ , 0);
   // return totalMoneyIfIChooseFalse >= totalMoneyIfIChooseTrue ? false : true;
-  return history[history.length-1].theirs;
+  
 }
 // function totalMoney(me ,  you){
  
