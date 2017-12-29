@@ -8,7 +8,7 @@ const decide = (history = []) => {
   // const totalMoneyIfIChooseTrue = interestRateIfIChooseTrue.reduce((sum , number) => number+sum , 0);
   // const totalMoneyIfIChooseFalse = interestRateIfIChooseFalse.reduce((summ , numberr) => numberr+summ , 0);
   // return totalMoneyIfIChooseFalse >= totalMoneyIfIChooseTrue ? false : true;
-  return history[history.length].theirs;
+  return history[history.length-1].theirs;
 }
 // function totalMoney(me ,  you){
  
