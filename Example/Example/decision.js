@@ -16,4 +16,4 @@ function totalMoney(me ,  you){
   const interestRateIfIChooseFalse = IfIChooseFalse.map(historyDecideIChooseFalse , totalMoney(historyDecideIChooseFalse.yours , historyDecideIChooseFalse.theirs));
   const totalMoneyIfIChooseTrue = interestRateIfIChooseTrue.reduce((sum , number) => number+sum , 0);
   const totalMoneyIfIChooseFalse = interestRateIfIChooseFalse.reduce((summ , numberr) => numberr+summ , 0);
-module.exports = decide;
+module.exports = decide;    
