@@ -7,7 +7,7 @@ const decide = (history = []) => {
   const interestRateIfIChooseFalse = IfIChooseFalse.map(historyDecideIChooseFalse => totalMoney(historyDecideIChooseFalse.yours , historyDecideIChooseFalse.theirs));
   const totalMoneyIfIChooseTrue = interestRateIfIChooseTrue.reduce((sum , number) => number+sum , 0);
   const totalMoneyIfIChooseFalse = interestRateIfIChooseFalse.reduce((summ , numberr) => numberr+summ , 0);
-  return totalMoneyIfIChooseFalse > totalMoneyIfIChooseTrue ? false : true;
+  return totalMoneyIfIChooseFalse >= totalMoneyIfIChooseTrue ? false : true;
   
 }
 function totalMoney(me ,  you){
@@ -15,7 +15,6 @@ function totalMoney(me ,  you){
  return me == false ? (you==true ? 500+ 3 : 500):(you==true ? 500+ 2 :  500-1);
   
 }
-
-  
+ 
 module.exports = decide; 
 
