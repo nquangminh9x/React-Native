@@ -1,7 +1,7 @@
 // return false to cheat, true to cooperate
 const decide = (history = []) => {
   
- return history.length==0 ? true : history[history.length - 1].theirs; 
+  return history.length==0 ? true : coOperate(history[history.length - 1].theirs); 
   // const IfIChooseTrue = history.filter(historyDecide => historyDecide.yours == true);
   // const IfIChooseFalse = history.filter(historyDecide =>historyDecide.yours == false);
   // const interestRateIfIChooseTrue = IfIChooseTrue.map(historyDecideIChooseTrue => totalMoney(historyDecideIChooseTrue.yours , historyDecideIChooseTrue.theirs));
@@ -17,7 +17,7 @@ const decide = (history = []) => {
   
 // }
  function coOperate(enemyLastChoose){
-   return enemyLastChoose = true ? true :((Math.floor(Math.random()*30))==1 ? true : false);
+   return enemyLastChoose == true ? true :((Math.floor(Math.random()*30))==1 ? true : false);
  }
 module.exports = decide; 
 
