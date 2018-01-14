@@ -7,13 +7,12 @@ import {
 } from 'react-native';
 
 class GameOver extends Component {
-  state = {  }
-  _onPress = ()=> { this.props.changeScreenToGamePlay() } ;
+  state = {}
   render() {
     return (
       <View>
-      <Text>{this.props.score}</Text>
-      <Button onPress = {this._onPress} title = "Play again" />;
+        <Text>{this.props.score}</Text>
+        <Button onPress={this.props.onRetry} title="Retry" />
       </View>
     );
   }
