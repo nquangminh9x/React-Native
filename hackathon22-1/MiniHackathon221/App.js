@@ -29,16 +29,25 @@ export default class App extends PureComponent {
 
   _changeValue = (fromOrTo) => {
     fromOrTo == 'from' ?
-      (
+      (this.state.now - this.state.next < 0 ?
         this.setState({
-          Output: Math.round(this.state.Input * Math.pow(10, (this.state.now - this.state.next)) * 100) / 100
+          Output: Math.round(this.state.Input * Math.pow(10, Math.abs(this.state.now - this.state.next)) * 100) / 100
+        })
+        :
+        this.setState({
+          Output: Math.round(this.state.Input / Math.pow(10, Math.abs(this.state.now - this.state.next)) * 100) / 100
         })
       )
       :
       (
-        this.setState({
-          Input: Math.round(this.state.Output * Math.pow(10, (this.state.now - this.state.next)) * 100) / 100
-        })
+        this.state.now - this.state.next < 0 ?
+          this.setState({
+            Input: Math.round(this.state.Output * Math.pow(10, Math.abs(this.state.now - this.state.next)) * 100) / 100
+          })
+          :
+          this.setState({
+            Input: Math.round(this.state.Output / Math.pow(10, Math.abs(this.state.now - this.state.next)) * 100) / 100
+          })
       )
   }
   _onClick = (i, leftOrRight) => {
