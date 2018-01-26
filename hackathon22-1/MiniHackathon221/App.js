@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 
 
-
 const UNIT = [
   "Metre",
   "Decimeter",
