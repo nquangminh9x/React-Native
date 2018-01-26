@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 
 
+
 const UNIT = [
   "Metre",
   "Decimeter",
@@ -30,13 +31,13 @@ export default class App extends PureComponent {
     fromOrTo == 'from' ?
       (
         this.setState({
-          Output: Math.round(this.state.Input * Math.pow(10, Math.abs(this.state.now - this.state.next)) * 100) / 100
+          Output: Math.round(this.state.Input * Math.pow(10, (this.state.now - this.state.next)) * 100) / 100
         })
       )
       :
       (
         this.setState({
-          Input: Math.round(this.state.Output * Math.pow(10, Math.abs(this.state.now - this.state.next)) * 100) / 100
+          Input: Math.round(this.state.Output * Math.pow(10, (this.state.now - this.state.next)) * 100) / 100
         })
       )
   }
