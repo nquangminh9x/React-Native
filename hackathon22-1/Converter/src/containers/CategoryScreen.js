@@ -44,7 +44,6 @@ class CategoryScreen extends PureComponent {
 }
 
 
-
 const mapAppStateToProps = state => ({
   category: state.category
 });
